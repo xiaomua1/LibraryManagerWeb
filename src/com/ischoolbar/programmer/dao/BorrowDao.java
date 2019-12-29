@@ -24,6 +24,7 @@ public class BorrowDao extends BaseDao<Borrow> {
 			sql = "select count(id) as num,book from borrow  GROUP BY book_id ORDER BY num limit 0,20";
 		}
 		try {
+
 			PreparedStatement prepareStatement = getDbUtil().connection.prepareStatement(sql);
 			ResultSet executeQuery = prepareStatement.executeQuery();
 			while(executeQuery.next()){
